@@ -1,26 +1,27 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root[data-theme="auroraDark"] {
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-base-100 text-base-content font-sans min-h-screen;
+}
+
+.calendar-surface {
+  @apply bg-white/70 dark:bg-slate-900/50 backdrop-blur-xl border border-white/40 dark:border-white/5 shadow-soft;
+}
+
+.neumorphic {
+  box-shadow: 20px 20px 60px #d9d9e4, -20px -20px 60px #ffffff;
+}
+
+.dark .neumorphic {
+  box-shadow: 20px 20px 60px #050914, -20px -20px 60px #141b2d;
 }
