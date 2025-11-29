@@ -2,8 +2,5 @@
   "framework": "nextjs",
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
-  "outputDirectory": ".next",
-  "experimental": {
-    "optimizePackageImports": ["lucide-react"]
-  }
+  "outputDirectory": ".next"
 }
